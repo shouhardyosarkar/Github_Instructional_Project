@@ -1,14 +1,13 @@
-Project Title and Purpose:
-
-Project Title: GitHub Basics for Beginners
+ 
+# Title: GitHub Basics for Beginners
 
 Purpose: This project is designed to introduce newcomers to GitHub — a powerful platform for version control and collaboration. It walks through the process of setting up a GitHub repository, writing documentation, and understanding essential GitHub features. Whether you're a student, developer, or curious learner, this guide will help you take your first steps with GitHub confidently.
 
-What Is GitHub and Why Is It Useful?
+# What Is GitHub and Why Is It Useful?
 
 GitHub is a web-based platform that uses Git, a version control system, to help individuals and teams manage code and collaborate on projects. It’s widely used in software development, but also valuable for documentation, design, and data projects.
 
-Some Definitions :
+# Some Definitions :
 
 # GitHub Glossary
 
@@ -17,7 +16,7 @@ Some Definitions :
 - **Branch**: A separate version of your project
 - **Pull Request**: A request to merge changes
 
-Why Use GitHub?
+# Why Use GitHub?
 
 Version Control: Track changes to your files over time.
 
@@ -29,7 +28,7 @@ Open Source: Share your work with the world or keep it private.
 
 Integration: Connect with tools like VS Code, GitHub Pages, and CI/CD pipelines.
 
-Step-by-Step Setup Instructions:
+# Step-by-Step Setup Instructions:
 
 Step 1: Create a GitHub Account
 Visit github.com
@@ -56,7 +55,7 @@ Click Add file → Create new file
 Name it (e.g., CONTRIBUTING.md, GLOSSARY.md)
 Write your content and click Commit new file
 
-Key GitHub Features Explained
+# Key GitHub Features Explained
 
 Commits:
 
@@ -73,7 +72,7 @@ A pull request is a way to propose changes from one branch to another. It’s ho
 
 
 
-Next we explain how others can contribute to our project via Github
+# Next we explain how others can contribute to our project via Github
 
 
 # Contributing Guide
@@ -89,7 +88,7 @@ Please keep your commits clear and descriptive.
 
 
 
-In Github we can explore some exciting features :
+# In Github we can explore some exciting features :
 
 
 # Cool GitHub Features
