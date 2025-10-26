@@ -96,3 +96,8 @@ Please keep your commits clear and descriptive.
 - **GitHub Pages**: Host a website directly from your repo
 - **Actions**: Automate tasks like testing or deployment
 - **Discussions**: Collaborate and ask questions
+
+
+
+
+![GitHub Workflow](/Users/shouhardyo/Downloads/image.png)
