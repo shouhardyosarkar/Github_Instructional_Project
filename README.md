@@ -8,6 +8,15 @@ What Is GitHub and Why Is It Useful?
 
 GitHub is a web-based platform that uses Git, a version control system, to help individuals and teams manage code and collaborate on projects. It’s widely used in software development, but also valuable for documentation, design, and data projects.
 
+Some Definitions :
+
+# GitHub Glossary
+
+- **Repository**: A project folder on GitHub
+- **Commit**: A saved change
+- **Branch**: A separate version of your project
+- **Pull Request**: A request to merge changes
+
 Why Use GitHub?
 
 Version Control: Track changes to your files over time.
@@ -64,6 +73,27 @@ A pull request is a way to propose changes from one branch to another. It’s ho
 
 
 
+Next we explain how others can contribute to our project via Github
+
+
+# Contributing Guide
+
+ Here's how others can help:
+
+- Fork the repository
+- Create a new branch
+- Make your changes
+- Submit a pull request
+
+Please keep your commits clear and descriptive.
 
 
 
+In Github we can explore some exciting features :
+
+
+# Cool GitHub Features
+
+- **GitHub Pages**: Host a website directly from your repo
+- **Actions**: Automate tasks like testing or deployment
+- **Discussions**: Collaborate and ask questions
