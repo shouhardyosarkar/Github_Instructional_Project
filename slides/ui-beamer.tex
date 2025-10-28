@@ -1,0 +1,279 @@
+% Toggles between whether printed as a handout or "bullet-per-slide"
+\documentclass{beamer}
+% \documentclass[handout]{beamer}
+\usepackage[utf8]{inputenc}
+\usetheme{Warsaw}
+\usecolortheme{uiowa}
+\useoutertheme[subsection=false]{smoothbars}
+
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{graphics}
+\usepackage{natbib}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[english]{babel}
+\usepackage{caption}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage{bm}
+\usepackage{hyperref}
+\input{custom}
+
+% link colors
+\hypersetup{
+  colorlinks=true,
+  citecolor=black,
+  linkcolor=.,
+  urlcolor=uiblue
+}
+
+% ------------------------------------------------------------------
+% Title info
+% ------------------------------------------------------------------
+\title[Collaboration with GitHub \hspace{3mm} Version Control in Practice \hspace{7em} \insertframenumber/\inserttotalframenumber]
+{Version Control, GitHub Collaboration,\\ and Reproducible Team Workflow}
+
+\author[Group Project]{Dylan Day, Shuo Li, Trevor Debutch, Shouhardyo Sarkar}
+\date{\today}
+\institute[The University of Iowa]{The University of Iowa, Department of Statistics and Actuarial Science}
+
+\logo{\includegraphics[width=0.12\textwidth]{iowa-logo.png}}
+
+% ------------------------------------------------------------------
+\begin{document}
+% ------------------------------------------------------------------
+
+\frame{\titlepage}
+
+% ==============================
+\section{Motivation \& Goals}
+% ==============================
+
+\begin{frame}{Why Are We Talking About Version Control?}
+  \begin{itemize}
+    \item We work in groups and need to edit the same files without overwriting each other.
+    \item We want a record of \textbf{who changed what and when}.
+    \item We want to be able to \textbf{go back in time} if something breaks.
+    \item We want our work to be \textbf{reproducible} on any machine.
+  \end{itemize}
+
+  \vspace{2mm}
+  \textbf{Version control} is the system that tracks changes to files over time so you can recall or restore specific versions later.
+\end{frame}
+
+\begin{frame}{What We'll Show in This Talk}
+  \begin{itemize}
+    \item What Git and GitHub actually do (not just buzzwords).
+    \item How teams collaborate using branches, commits, and pull requests.
+    \item How to connect a local folder to a GitHub repo and push/pull.
+    \item How this supports small coding projects (for class or research).
+  \end{itemize}
+\end{frame}
+
+% ==============================
+\section{Git, GitHub, and Key Concepts}
+% ==============================
+
+\begin{frame}{Git vs GitHub}
+  \begin{block}{Git}
+    A distributed version control system: every person has a full copy of the repository, history and all.
+    Fast, offline-friendly.
+  \end{block}
+
+  \begin{block}{GitHub}
+    A cloud platform \textbf{built on top of Git} that adds:
+    \begin{itemize}
+      \item remote hosting / backup
+      \item pull requests \& code review
+      \item issues \& project boards
+      \item CI/CD automation
+    \end{itemize}
+    GitHub turns source code into a collaborative workspace.
+  \end{block}
+\end{frame}
+
+\begin{frame}{GitHub Glossary}
+  \begin{itemize}
+    \item \textbf{Repository (repo)}: the project folder on GitHub.
+    \item \textbf{Commit}: a saved change with a message.
+    \item \textbf{Branch}: a parallel version of the project used to develop features safely.
+    \item \textbf{Pull Request (PR)}: a request to merge changes from one branch into another after review.
+  \end{itemize}
+
+  \vspace{2mm}
+  These concepts let multiple people experiment, review, and merge without breaking \texttt{main}.
+\end{frame}
+
+\begin{frame}{Why Use GitHub in a Class Project?}
+  \begin{itemize}
+    \item \textbf{Collaboration}: everyone can contribute code, documentation, or data without emailing files.
+    \item \textbf{History}: you can see exactly how the project evolved.
+    \item \textbf{Accountability}: each commit is tied to an author.
+    \item \textbf{Safety}: if someone breaks something, you can roll back.
+    \item \textbf{Publishability}: you can keep it private or make it public to show future advisors / employers.
+  \end{itemize}
+\end{frame}
+
+% ==============================
+\section{Basic Git Workflow}
+% ==============================
+
+\begin{frame}{Core Commands You Will Actually Use}
+  \begin{itemize}
+    \item \texttt{git clone <repo>} \\
+      download a copy of a GitHub repo to your computer
+    \item \texttt{git add .} \\
+      stage your edits (tell Git which changes you want to commit)
+    \item \texttt{git commit -m "message"} \\
+      record a snapshot of those changes
+    \item \texttt{git pull} and \texttt{git push} \\
+      sync with GitHub (pull down others' work, push up yours)
+    \item \texttt{git branch}, \texttt{git merge} \\
+      work on new ideas in isolation, then merge them back
+  \end{itemize}
+
+  \vspace{2mm}
+  These actions are the backbone of team development.
+\end{frame}
+
+\begin{frame}{Branches and Pull Requests}
+  \begin{itemize}
+    \item Each teammate can create a new branch (for example, \texttt{feature-ui}).
+    \item You do your work there without touching the \texttt{main} branch.
+    \item When ready, you open a \textbf{Pull Request} on GitHub:
+      \begin{itemize}
+        \item show what changed
+        \item explain why
+        \item request review
+      \end{itemize}
+    \item After review, the branch is merged into \texttt{main}.
+  \end{itemize}
+
+  \vspace{2mm}
+  This workflow gives you feedback, quality control, and a clean history instead of chaos.
+\end{frame}
+
+% ==============================
+\section{Connecting Local and Remote}
+% ==============================
+
+\begin{frame}{Step 1: Clone the Repository}
+  \begin{itemize}
+    \item One person creates a repo on GitHub.
+    \item Everyone else runs:
+  \end{itemize}
+
+  \vspace{1mm}
+  \texttt{git clone https://github.com/owner/RepoName.git}
+
+  \vspace{2mm}
+  Now you have a full local copy of the project folder, including history and branches.
+\end{frame}
+
+\begin{frame}[fragile]{Step 2: Check the Remote Link}
+  \begin{itemize}
+    \item Inside the project folder, verify GitHub is set as ``origin'':
+  \end{itemize}
+
+  \vspace{1mm}
+  \texttt{git remote -v}
+
+  \vspace{2mm}
+  Expected:
+  \begin{verbatim}
+origin  https://github.com/owner/RepoName.git (fetch)
+origin  https://github.com/owner/RepoName.git (push)
+  \end{verbatim}
+
+  \vspace{2mm}
+  If you see that, your local repo is correctly connected to the GitHub repo.
+\end{frame}
+
+\begin{frame}{Step 3: Pull and Push}
+  \begin{itemize}
+    \item \textbf{Pull} before you start editing:
+  \end{itemize}
+
+  \vspace{1mm}
+  \texttt{git pull origin main}
+
+  \vspace{3mm}
+  \begin{itemize}
+    \item After editing files:
+  \end{itemize}
+
+  \vspace{1mm}
+  \texttt{git add .}\\
+  \texttt{git commit -m "explain what you changed"}\\
+  \texttt{git push origin main}
+
+  \vspace{2mm}
+  If push is rejected, it means someone else updated \texttt{main}; run \texttt{git pull} to merge first.
+\end{frame}
+
+\begin{frame}{Step 4: Authentication / Permissions}
+  \begin{itemize}
+    \item GitHub requires you to prove who you are when pushing.
+    \item If you see ``Permission denied'' or ``Authentication failed'':
+      \begin{itemize}
+        \item You may need a Personal Access Token (PAT) instead of a password.
+        \item Or you may not have been added as a collaborator yet.
+      \end{itemize}
+    \item Good news: pulling (reading) is often easier than pushing (writing).
+  \end{itemize}
+\end{frame}
+
+% ==============================
+\section{Team Project Angle}
+% ==============================
+
+\begin{frame}{How This Supports a Team Project}
+  \begin{itemize}
+    \item Everyone can contribute in parallel:
+      \begin{itemize}
+        \item Code / analysis scripts
+        \item README documentation
+        \item Example data or test cases
+      \end{itemize}
+    \item Changes are tracked and credited to specific authors.
+    \item The repo becomes a ``single source of truth'' for the project.
+    \item You can show the final repo (or a link) as part of your assignment deliverable.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{What We Practiced as a Group}
+  \begin{itemize}
+    \item Setting up a shared GitHub repository.
+    \item Cloning to each teammate's laptop.
+    \item Making edits on branches and creating pull requests for review.
+    \item Resolving merge conflicts.
+    \item Documenting everything in \texttt{README.md} so it is reproducible later.
+  \end{itemize}
+\end{frame}
+
+% ==============================
+\section{Takeaways}
+% ==============================
+
+\begin{frame}{Key Takeaways}
+  \begin{itemize}
+    \item Version control = a time machine for your project.
+    \item GitHub = collaboration, accountability, and backup.
+    \item Branches + pull requests = safe teamwork without stepping on each other's work.
+    \item Pull before you push.
+    \item Clear commit messages and good README files make your work reusable.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Questions?}
+  \centering
+  \Large Thank you!
+\end{frame}
+
+% ------------------------------------------------------------------
+\bibliographystyle{plainnat}
+\bibliography{refs}
+
+\end{document}

@@ -1,0 +1,65 @@
+\mode<presentation>
+
+% Definition of Iowa's trademarked 'old gold' color
+\definecolor{uigold}{HTML}{FFCD00} 
+
+% Secondary colors from UI brand manual - use sparingly
+% see https://brand.uiowa.edu/color for details 
+\definecolor{uigrey}{HTML}{63666A}
+\definecolor{uiblue}{HTML}{00558C}
+\definecolor{uigreen}{HTML}{00664F}
+\definecolor{uiorange}{HTML}{BD472A}
+
+\setbeamercolor{structure}{fg=black,bg=uigold}
+%\setbeamercolor{local structure}{parent=structure}
+
+% Other color scheme details 
+\useinnertheme[shadow=true]{rounded}
+\useoutertheme{shadow}
+
+% Main title-bar colors
+\setbeamercolor{palette primary}{fg=black,bg=uigold} % !<#> is transparency
+\setbeamercolor{palette secondary}{fg=black,bg=uigold}
+\setbeamercolor{palette tertiary}{fg=black,bg=uigold}
+\setbeamercolor{palette quaternary}{fg=white,bg=black}
+\setbeamercolor{titlelike}{parent=palette tertiary}
+
+% Inner block colors
+\setbeamercolor{block title}{fg=black,bg=uigold}
+
+% if you uncomment the lines below, the title text on content slides will turn black. Some may prefer this style.
+%\setbeamercolor{block title alerted}{use=alerted text,fg=uigold,bg=alerted text.fg!75!bg}
+%\setbeamercolor{block title example}{use=example text,fg=uigold,bg=example text.fg!75!bg}
+
+%\setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!25!bg}
+%\setbeamercolor{block body alerted}{parent=normal text,use=block title alerted,bg=block title alerted.bg!25!bg}
+%\setbeamercolor{block body example}{parent=normal text,use=block title example,bg=block title example.bg!25!bg}
+
+%\setbeamercolor{sidebar}{bg=uigold!70}
+%  
+%\setbeamercolor{palette sidebar primary}{fg=black}
+%\setbeamercolor{palette sidebar secondary}{fg=uigold!75}
+%\setbeamercolor{palette sidebar tertiary}{fg=uigold!75}
+%\setbeamercolor{palette sidebar quaternary}{fg=uigold}
+
+\setbeamercolor{item}{fg=uigold}
+
+
+% Other presentation options
+\usefonttheme[onlymath]{serif}
+\setbeamertemplate{navigation symbols}{}
+
+% For 'itemize' and 'enumerate' 
+\setbeamertemplate{itemize item}{\raise.1ex\hbox{\color{uigold}$\bullet$}} 
+\setbeamertemplate{itemize subitem}{\raise.1ex\hbox{\color{uigold}$\circ$}}
+\setbeamertemplate{itemize subsubitem}{\scriptsize\raise.1ex\hbox{\color{uigold}$\bullet$}}
+\setbeamertemplate{enumerate items}[default]
+\setbeamercolor{enumerate item}{fg=uigold}
+\setbeamercolor{enumerate subitem}{fg=uigold}
+\setbeamercolor{enumerate subsubitem}{fg=uigold}
+
+% you could toggle what is below to any of the secondar colors defined above
+\setbeamercolor{description item}{fg=uiblue}
+
+
+\mode<all>

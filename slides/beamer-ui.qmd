@@ -1,0 +1,51 @@
+---
+title: "Presentation title"
+subtitle: "An example presentation"
+author: Test Case
+institute: Univeristy of ..., College/Dept. of ...
+date: "`r Sys.Date()`"
+bibliography: refs.bib
+output: 
+  beamer_presentation:
+    theme: "Warsaw"
+    colortheme: "uiowa"
+    slide_level: 3 # can toggle this to 2 if subsections are not needed
+    incremental: true 
+    includes: 
+      in_header: 
+        - ./custom.tex
+header-includes:
+   - \AtBeginDocument{\title[Short title\hspace{18em} \insertframenumber\ of \inserttotalframenumber]{Full title}}
+   - \logo{\includegraphics[width=0.12\textwidth]{IOWA-logo.png}}
+---
+
+# Title of first section 
+
+## My first section
+
+### A first slide in section 1 
+
+  - Point 1 uses \textcolor{uiblue}{all} \textcolor{uigrey}{four} \textcolor{uigreen}{secondary} \textcolor{uiorange}{colors}
+  
+  - Point 2 has a \href{https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html}{link}
+  
+  - Point 3 refers to @paper01
+  
+  
+# Title of second section
+
+## My second section
+
+### A slide with math 
+
+$$\Y = \X\beta + \eps$$
+
+## Take home messages 
+
+  - Remember this 
+  
+  - And this 
+
+
+## References {.allowframebreaks}
+
