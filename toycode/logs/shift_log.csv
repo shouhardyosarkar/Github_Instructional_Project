@@ -1,0 +1,2 @@
+timestamp_utc,watcher_name,machine_id,cpu_load_pct,temp_celsius,error_rate,notes_this_shift,handoff_to_next
+2025-10-28T03:41:02Z,Shuo,Windows-11-shuog,36.8,55.3,1.322,Just to test this shift_code.py,You can have atry.

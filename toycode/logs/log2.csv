@@ -1,0 +1,2 @@
+timestamp_utc,watcher_name,machine_id,cpu_load_pct,temp_celsius,error_rate,notes_this_shift,handoff_to_next
+2025-10-28T03:55:02Z,Shuo,Windows-11-shuog,67.5,65.7,0.318,2nd file to test adding file function,You can try!
