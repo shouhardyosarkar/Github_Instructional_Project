@@ -1,14 +1,3 @@
----
-title: "Instructional Project HW Question"
-author: "Group 2"
-date: "2025-11-13"
-output: pdf_document
----
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
 ## Problem 1: Setting up GitHub Repository and Pages
 
 ### Part 1
@@ -43,10 +32,11 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 1.  Save this html code as index.html and then commit it to your main branch.
-2.  On your repo, go to **Settings → Pages**\
+2.  On your repo, go to **Settings → Pages**
 3.  **Source**: choose the branch and folder to publish
     -   Publish the **`main`** branch, root (/) or /docs
-4.  Click **Save**\
+4.  Click **Save**
 5.  Wait for “Your site is live at …” banner (first publish can take a minute)
 
 ### Submit a screenshot of the live website.
+
